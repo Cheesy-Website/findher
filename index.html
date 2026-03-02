@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content="#000000" name="theme-color" />
+    <meta content="noindex" name="robots" />
+    <title>
+      * (It&#39;s a red guitar.)
+    </title>
+  </head>
+  <body>
+    <main>
+      <script crossorigin="anonymous" integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js">
+      </script>
+      <script crossorigin="anonymous" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js">
+      </script>
+      <div id="center">
+        <div class="dess">
+          <img alt="Red guitar" src="dess.png" />
+        </div>
+      </div>
+      <style>
+        .dess {
+    min-width: 320px;
+    max-width: 100%;
+    min-height: 320px;
+    max-height: 100%;
+    position: relative;
+    color: black;
+    cursor: pointer;
+  }
+  .dess img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+  }
+      </style>
+      <script>
+        var dess = new Howl({
+    src: [&#39;/findher.ogg&#39;, &#39;/findher.mp3&#39;],
+    volume: 0.5,
+    loop: true
+  });
+  
+  $(document).on(&#39;click&#39;, &#39;.dess:not(.playing)&#39;, function() {
+    dess.play();
+    $(&#39;.dess&#39;).addClass(&#39;playing&#39;);
+  });
+  
+  $(document).on(&#39;click&#39;, &#39;.dess.playing&#39;, function() {
+    dess.stop();
+    $(&#39;.dess&#39;).removeClass(&#39;playing&#39;);
+  });
+      </script>
+    </main>
+    <script defer="">
+      if(!window.plausibleloaded){window.plausibleloaded=true;var onloadfunc = function() {!function(){&#34;use strict&#34;;var t=window.location,e=window.document;function a(t,e){t&amp;&amp;console.warn(&#34;Ignoring Event: &#34;+t),e&amp;&amp;e.callback&amp;&amp;e.callback()}function n(n,i){if(/^localhost$|^127(\.[0-9]+){0,2}\.[0-9]+$|^\[::1?\]$/.test(t.hostname)||&#34;file:&#34;===t.protocol)return a(&#34;localhost&#34;,i);if(window._phantom||window.__nightmare||window.navigator.webdriver||window.Cypress)return a(null,i);try{if(&#34;true&#34;===window.localStorage.plausible_ignore)return a(&#34;localStorage flag&#34;,i)}catch(r){}var l={},o=(l.n=n,l.u=t.href,l.d=&#34;deltarune.com&#34;,l.r=e.referrer||null,i&amp;&amp;i.meta&amp;&amp;(l.m=JSON.stringify(i.meta)),i&amp;&amp;i.props&amp;&amp;(l.p=i.props),new XMLHttpRequest);o.open(&#34;POST&#34;,&#34;https://plausible.fangamer.eu/api/event&#34;,!0),o.setRequestHeader(&#34;Content-Type&#34;,&#34;text/plain&#34;),o.send(JSON.stringify(l)),o.onreadystatechange=function(){4===o.readyState&amp;&amp;i&amp;&amp;i.callback&amp;&amp;i.callback()}}e.currentScript;var i=window.plausible&amp;&amp;window.plausible.q||[];window.plausible=n;for(var r,l=0;l&lt;i.length;l++)n.apply(this,i[l]);function o(){r!==t.pathname&amp;&amp;(r=t.pathname,n(&#34;pageview&#34;))};o();}();}; onloadfunc();}
+    </script>
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v67327c56f0bb4ef8b305cae61679db8f1769101564043" integrity="sha512-rdcWY47ByXd76cbCFzznIcEaCN71jqkWBBqlwhF1SY7KubdLKZiEGeP7AyieKZlGP9hbY/MhGrwXzJC/HulNyg==" data-cf-beacon="{&#34;version&#34;:&#34;2024.11.0&#34;,&#34;token&#34;:&#34;377f50f2716b474ea394c9bbd3aaef87&#34;,&#34;r&#34;:1,&#34;server_timing&#34;:{&#34;name&#34;:{&#34;cfCacheStatus&#34;:true,&#34;cfEdge&#34;:true,&#34;cfExtPri&#34;:true,&#34;cfL4&#34;:true,&#34;cfOrigin&#34;:true,&#34;cfSpeedBrain&#34;:true},&#34;location_startswith&#34;:null}}" crossorigin="anonymous">
+    </script>
+  </body>
+</html>
