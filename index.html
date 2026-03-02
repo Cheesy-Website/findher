@@ -6,37 +6,7 @@
     <meta name="theme-color" content="#000000" />
     <meta name="robots" content="noindex" />
     <title>*(It's a red guitar.)</title>
-
-    <style>
-      body {
-        margin: 0;
-      }
-
-      #center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .dess {
-        min-width: 320px;
-        max-width: 100%;
-        min-height: 320px;
-        max-height: 100%;
-        position: relative;
-        cursor: pointer;
-      }
-
-      .dess img {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-        image-rendering: pixelated;
-        user-select: none;
-        pointer-events: none;
-      }
-    </style>
+    <link rel="stylesheet" href="/extra.css" />
   </head>
 
   <body>
@@ -47,24 +17,42 @@
         </div>
       </div>
 
-      <!-- Native audio (MP3 only) -->
+      <style>
+        .dess {
+          min-width: 320px;
+          max-width: 100%;
+          min-height: 320px;
+          max-height: 100%;
+          position: relative;
+          color: black;
+          cursor: pointer;
+        }
+
+        .dess img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          image-rendering: pixelated;
+        }
+      </style>
+
+      <!-- Native audio -->
       <audio id="audio" src="/findher.mp3" loop preload="auto"></audio>
 
       <script>
         const dess = document.getElementById('dess');
         const audio = document.getElementById('audio');
 
-        let playing = false;
-
         dess.addEventListener('click', () => {
-          if (!playing) {
+          if (!dess.classList.contains('playing')) {
             audio.volume = 0.5;
             audio.play();
-            playing = true;
+            dess.classList.add('playing');
           } else {
             audio.pause();
             audio.currentTime = 0;
-            playing = false;
+            dess.classList.remove('playing');
           }
         });
       </script>
